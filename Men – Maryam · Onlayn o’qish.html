@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Men – Maryam · Onlayn o’qish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3e3c3; --sand:#e8c88a; --ink:#2b1a0e; --muted:#7a5a3a; --accent:#b8661f; --card:#fbf1da; --line:#d9bd88; --onacc:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#16110c; --sand:#3a2a18; --ink:#ecdcbc; --muted:#a58b66; --accent:#e49a4a; --card:#201811; --line:#3b2c1c; --onacc:#1a1209; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#16110c; --sand:#3a2a18; --ink:#ecdcbc; --muted:#a58b66; --accent:#e49a4a; --card:#201811; --line:#3b2c1c; --onacc:#1a1209; color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Literata",Georgia,serif;line-height:1.6}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.top b{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:1.05rem}
+.tbtn{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem}
+.hero{background:linear-gradient(180deg,var(--sand),var(--bg));padding:12px 0 36px}
+.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr;justify-items:center;text-align:center}
+.cover{width:min(240px,62vw);aspect-ratio:2/3;border-radius:4px 10px 10px 4px;background:linear-gradient(180deg,#f2b94a 0%,#d98a2b 55%,#a85a1c 100%);box-shadow:-6px 0 0 #e9a93a inset,0 18px 40px rgba(60,30,5,.35);color:#fff;padding:26px 18px;display:flex;flex-direction:column;justify-content:space-between}
+.cover h2{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:2.1rem;line-height:1;margin:0;letter-spacing:-.01em}
+.cover p{margin:10px 0 0;font-size:.72rem;line-height:1.35;opacity:.95}
+.cover small{font-size:.82rem;letter-spacing:.04em}
+h1{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1;margin:0}
+.by{margin:8px 0 0;color:var(--muted)}
+.quote{max-width:34ch;margin:14px auto 0;font-style:italic}
+.cta{margin-top:20px;background:var(--accent);color:var(--onacc);border:0;border-radius:10px;padding:14px 28px;font-weight:600;font-size:1.05rem}
+h3{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.3rem;margin:32px 0 12px}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li button{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:16px 4px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.list li button:hover{background:var(--card)}
+.list span.s{color:var(--muted);font-size:.85rem;white-space:nowrap}
+footer{padding:36px 0 48px;color:var(--muted);font-size:.85rem}
+/* reader */
+#reader{position:fixed;inset:0;background:var(--bg);z-index:5;display:none;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+#reader.on{display:flex}
+.rbar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.rbar .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.ib{background:none;border:1px solid var(--line);border-radius:8px;min-width:40px;height:40px;padding:0 10px}
+.prog{height:3px;background:var(--line)}
+.prog i{display:block;height:100%;width:0;background:var(--accent)}
+#scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#text{max-width:36rem;margin:0 auto;padding:28px 22px 40px;font-size:var(--fs,1.15rem);line-height:1.8}
+#text h2{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:1.7em;line-height:1.1;margin:0 0 .8em}
+#text p{margin:0 0 1em}
+.nav{display:flex;justify-content:space-between;gap:12px;max-width:36rem;margin:0 auto;padding:0 22px calc(28px + env(safe-area-inset-bottom,0px))}
+.nav button{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.nav button:disabled{opacity:.4;cursor:default}
+@media (min-width:640px){.hero .wrap{grid-template-columns:240px 1fr;text-align:left;justify-items:start;align-items:center}.quote{margin-left:0}}
+@media (prefers-reduced-motion:no-preference){.cover{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px) rotate(-1.5deg)}to{opacity:1;transform:none}}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap" style="display:block;padding-bottom:0">
+    <div class="top"><b>Onlayn kitob</b><button class="tbtn" id="theme" type="button">Tungi rejim</button></div>
+  </div>
+  <div class="wrap">
+    <div class="cover" aria-hidden="true">
+      <div><h2>MEN – MARYAM</h2><p>Inson suvga tushgani uchun emas, suvdan chiqa olmagani uchun cho’kadi</p></div>
+      <small>ORIGINAL HIKOYA</small>
+    </div>
+    <div>
+      <h1>Men – Maryam</h1>
+      <p class="by">Original hikoya</p>
+      <p class="quote">Inson suvga tushgani uchun emas, suvdan chiqa olmagani uchun cho’kadi.</p>
+      <button class="cta" id="start" type="button">O’qishni boshlash</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <h3>Boblar</h3>
+  <ul class="list" id="toc"></ul>
+</main>
+<footer class="wrap">Bu hikoya Claude tomonidan yozilgan original asar.</footer>
+
+<section id="reader" aria-label="Kitob o’qish">
+  <div class="rbar">
+    <button class="ib" id="back" type="button" aria-label="Boblar ro’yxati">←</button>
+    <div class="t" id="rtitle"></div>
+    <button class="ib" id="fm" type="button" aria-label="Harfni kichraytirish">A−</button>
+    <button class="ib" id="fp" type="button" aria-label="Harfni kattalashtirish">A+</button>
+  </div>
+  <div class="prog"><i id="bar"></i></div>
+  <div id="scroll">
+    <article id="text"></article>
+    <div class="nav"><button id="prev" type="button">Oldingi bob</button><button id="next" type="button">Keyingi bob</button></div>
+  </div>
+</section>
+
+<script>
+/* KITOB MATNI: har bir bobni shu ro’yxatga qo’shing.
+   title – bob nomi, body – abzatslar ro’yxati. */
+var CHAPTERS=[
+  {title:"1-bob. Quduq",body:["Qishloqning yagona quduqi shu yoz qurib qoldi. Odamlar avval hayron bo’ldi, keyin jim bo’lib qoldi, oxirida esa bir-biriga qaramay yurishni boshladi.","Maryam o’n yetti yoshda edi. Har tong bo’sh chelagini ko’tarib quduq boshiga borar, tubiga uzoq tikilib turar, so’ng indamay qaytardi. Chelak bo’sh edi, lekin yuragida nimadir to’lib borardi.","Buvisi aytardi: “Suv ketsa, qaytadi. Odam ketsa, qaytmaydi.” Maryam bu gapni tushunmasdi. Hali tushunmasdi.","Bir kechasi u eski xurjunini oldi. Ichiga bir bo’lak non, buvisining ro’molini va akasidan qolgan kichik sopol idishni soldi. Qishloq uyg’onmasdan oldin yo’lga chiqdi.","Faqat bitta qo’zichoq uning ortidan ergashdi."]},
+  {title:"2-bob. Yo’l",body:["Sahro kunduzi oltin, kechasi esa sovuq edi. Maryam birinchi kuni jimgina yurdi, ikkinchi kuni o’zi bilan gaplasha boshladi, uchinchi kuni esa qo’zichoq bilan.","— Sen ham qo’rqyapsanmi? — deb so’radi u.","Qo’zichoq javob bermadi, lekin yaqinroq keldi. Maryam uchun shu ham javob edi.","To’rtinchi kuni u kichik bir vohaga yetib keldi. Palma soyasida bir chol yer qazib o’tirardi.","— Qayoqqa ketyapsan, qizim?","— Suv bor joyga.","Chol kulimsiradi: — Suv hamma joyda bor. Faqat uni topguncha qazishda davom etadigan odam kam.","Tong otganda Maryam so’radi: — Nega to’xtamayapsiz? Axir qancha qazidingiz.","Chol belini rostlab javob berdi: — Chunki to’xtasam, bu yerda hech narsa qolmaydi."]},
+  {title:"3-bob. Suv",body:["Maryam vohada bir hafta qoldi. Chol bilan birga qazidi, kaftlari shilindi, lekin shikoyat qilmadi.","Yettinchi kuni kurak tagidan nam tuproq chiqdi. Keyin salqin bir shabada esdi. Keyin suv ko’rindi: avval loyqa, so’ng tiniq.","Maryam yig’lab yubordi. Suv uchun emas. Qishloq quduqi qurigan kuni yig’lamagan edi, hamma ko’z yoshi shu yerda to’kildi.","U sopol idishni to’ldirdi va birdan buvisining gapini tushundi. Odam ketsa qaytmaydi, agar yo’lini yo’qotib ketsa. U esa yo’lini topgan edi.","Ertasi tongda Maryam orqaga qaytdi. Endi bo’sh chelak bilan emas, kurak va suv bilan. Qo’zichoq oldinda yugurib borardi."]}
+];
+var $=function(i){return document.getElementById(i)};
+var store={get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+var cur=0,fs=parseFloat(store.get("mm-fs"))||1.15,saved=parseInt(store.get("mm-ch"),10);
+if(isNaN(saved)||saved<0||saved>=CHAPTERS.length)saved=-1;
+
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function toc(){
+  $("toc").innerHTML=CHAPTERS.map(function(c,i){
+    return '<li><button type="button" data-i="'+i+'"><span>'+esc(c.title)+'</span><span class="s">'+(i===saved?"davom etish":"")+'</span></button></li>';
+  }).join("");
+}
+function open(i){
+  cur=i;var c=CHAPTERS[i];
+  $("rtitle").textContent=c.title;
+  $("text").innerHTML='<h2>'+esc(c.title)+'</h2>'+c.body.map(function(p){return '<p>'+esc(p)+'</p>'}).join("");
+  $("prev").disabled=i===0;$("next").disabled=i===CHAPTERS.length-1;
+  $("reader").classList.add("on");$("scroll").scrollTop=0;$("bar").style.width="0";
+  store.set("mm-ch",i);saved=i;
+}
+function applyFs(){document.documentElement.style.setProperty("--fs",fs+"rem");store.set("mm-fs",fs)}
+$("toc").addEventListener("click",function(e){var b=e.target.closest("button");if(b)open(+b.dataset.i)});
+$("start").onclick=function(){open(saved>=0?saved:0)};
+$("back").onclick=function(){$("reader").classList.remove("on");toc()};
+$("prev").onclick=function(){if(cur>0)open(cur-1)};
+$("next").onclick=function(){if(cur<CHAPTERS.length-1)open(cur+1)};
+$("fm").onclick=function(){fs=Math.max(.9,fs-.1);applyFs()};
+$("fp").onclick=function(){fs=Math.min(1.8,fs+.1);applyFs()};
+$("scroll").addEventListener("scroll",function(){var s=$("scroll"),m=s.scrollHeight-s.clientHeight;$("bar").style.width=(m>0?s.scrollTop/m*100:0)+"%"});
+$("theme").onclick=function(){
+  var r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme=dark?"light":"dark";$("theme").textContent=dark?"Tungi rejim":"Kunduzgi rejim";store.set("mm-theme",r.dataset.theme);
+};
+(function(){var t=store.get("mm-theme");if(t){document.documentElement.dataset.theme=t;$("theme").textContent=t==="dark"?"Kunduzgi rejim":"Tungi rejim"}})();
+applyFs();toc();
+</script>
+</body>
+</html>
