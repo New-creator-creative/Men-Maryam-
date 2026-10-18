@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Men – Maryam · Onlayn o’qish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap" style="display:block;padding-bottom:0">
+    <div class="top"><b>Onlayn kitob</b><button class="tbtn" id="theme" type="button">Tungi rejim</button></div>
+  </div>
+  <div class="wrap">
+    <div class="cover" aria-hidden="true">
+      <div><h2>MEN – MARYAM</h2><p>Inson suvga tushgani uchun emas, suvdan chiqa olmagani uchun cho’kadi</p></div>
+      <small>ORIGINAL HIKOYA</small>
+    </div>
+    <div>
+      <h1>Men – Maryam</h1>
+      <p class="by">Original hikoya</p>
+      <p class="quote">Inson suvga tushgani uchun emas, suvdan chiqa olmagani uchun cho’kadi.</p>
+      <button class="cta" id="start" type="button">O’qishni boshlash</button>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+  <h3>Boblar</h3>
+  <ul class="list" id="toc"></ul>
+</main>
+<footer class="wrap">Bu hikoya Claude tomonidan yozilgan original asar.</footer>
+
+<section id="reader" aria-label="Kitob o’qish">
+  <div class="rbar">
+    <button class="ib" id="back" type="button" aria-label="Boblar ro’yxati">←</button>
+    <div class="t" id="rtitle"></div>
+    <button class="ib" id="fm" type="button" aria-label="Harfni kichraytirish">A−</button>
+    <button class="ib" id="fp" type="button" aria-label="Harfni kattalashtirish">A+</button>
+  </div>
+  <div class="prog"><i id="bar"></i></div>
+  <div id="scroll">
+    <article id="text"></article>
+    <div class="nav"><button id="prev" type="button">Oldingi bob</button><button id="next" type="button">Keyingi bob</button></div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

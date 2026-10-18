@@ -1,0 +1,51 @@
+:root{
+  --bg:#f3e3c3; --sand:#e8c88a; --ink:#2b1a0e; --muted:#7a5a3a; --accent:#b8661f; --card:#fbf1da; --line:#d9bd88; --onacc:#fff;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#16110c; --sand:#3a2a18; --ink:#ecdcbc; --muted:#a58b66; --accent:#e49a4a; --card:#201811; --line:#3b2c1c; --onacc:#1a1209; color-scheme:dark;}
+}
+:root[data-theme="dark"]{--bg:#16110c; --sand:#3a2a18; --ink:#ecdcbc; --muted:#a58b66; --accent:#e49a4a; --card:#201811; --line:#3b2c1c; --onacc:#1a1209; color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Literata",Georgia,serif;line-height:1.6}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
+.top b{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:1.05rem}
+.tbtn{background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem}
+.hero{background:linear-gradient(180deg,var(--sand),var(--bg));padding:12px 0 36px}
+.hero .wrap{display:grid;gap:24px;grid-template-columns:1fr;justify-items:center;text-align:center}
+.cover{width:min(240px,62vw);aspect-ratio:2/3;border-radius:4px 10px 10px 4px;background:linear-gradient(180deg,#f2b94a 0%,#d98a2b 55%,#a85a1c 100%);box-shadow:-6px 0 0 #e9a93a inset,0 18px 40px rgba(60,30,5,.35);color:#fff;padding:26px 18px;display:flex;flex-direction:column;justify-content:space-between}
+.cover h2{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:2.1rem;line-height:1;margin:0;letter-spacing:-.01em}
+.cover p{margin:10px 0 0;font-size:.72rem;line-height:1.35;opacity:.95}
+.cover small{font-size:.82rem;letter-spacing:.04em}
+h1{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:clamp(2.2rem,8vw,3.4rem);line-height:1;margin:0}
+.by{margin:8px 0 0;color:var(--muted)}
+.quote{max-width:34ch;margin:14px auto 0;font-style:italic}
+.cta{margin-top:20px;background:var(--accent);color:var(--onacc);border:0;border-radius:10px;padding:14px 28px;font-weight:600;font-size:1.05rem}
+h3{font-family:"Archivo",Arial,sans-serif;font-weight:800;font-size:1.3rem;margin:32px 0 12px}
+.list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.list li button{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:16px 4px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.list li button:hover{background:var(--card)}
+.list span.s{color:var(--muted);font-size:.85rem;white-space:nowrap}
+footer{padding:36px 0 48px;color:var(--muted);font-size:.85rem}
+/* reader */
+#reader{position:fixed;inset:0;background:var(--bg);z-index:5;display:none;flex-direction:column;padding-top:env(safe-area-inset-top,0px)}
+#reader.on{display:flex}
+.rbar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.rbar .t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+.ib{background:none;border:1px solid var(--line);border-radius:8px;min-width:40px;height:40px;padding:0 10px}
+.prog{height:3px;background:var(--line)}
+.prog i{display:block;height:100%;width:0;background:var(--accent)}
+#scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch}
+#text{max-width:36rem;margin:0 auto;padding:28px 22px 40px;font-size:var(--fs,1.15rem);line-height:1.8}
+#text h2{font-family:"Archivo",Arial,sans-serif;font-weight:900;font-size:1.7em;line-height:1.1;margin:0 0 .8em}
+#text p{margin:0 0 1em}
+.nav{display:flex;justify-content:space-between;gap:12px;max-width:36rem;margin:0 auto;padding:0 22px calc(28px + env(safe-area-inset-bottom,0px))}
+.nav button{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.nav button:disabled{opacity:.4;cursor:default}
+@media (min-width:640px){.hero .wrap{grid-template-columns:240px 1fr;text-align:left;justify-items:start;align-items:center}.quote{margin-left:0}}
+@media (prefers-reduced-motion:no-preference){.cover{animation:rise .7s ease-out both}@keyframes rise{from{opacity:0;transform:translateY(14px) rotate(-1.5deg)}to{opacity:1;transform:none}}}
